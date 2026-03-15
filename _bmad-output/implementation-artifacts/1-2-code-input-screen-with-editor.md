@@ -1,6 +1,6 @@
 # Story 1.2: Code Input Screen with Editor
 
-Status: review
+Status: done
 
 <!-- Note: Validation is optional. Run validate-create-story for quality check before dev-story. -->
 
@@ -90,6 +90,7 @@ function calculateTotal(items) {
 - @monaco-editor/react installed; CodeEditor.tsx with 780×360px, line numbers, calculateTotal placeholder
 - CodeInputScreen.tsx wraps hero, subtitle, editor; state in useState for roast request
 - app/page.tsx renders CodeInputScreen
+- **Review fixes:** Theme detection via MutationObserver (respects ThemeProvider toggle); fontFamily changed to direct font names (vs CSS vars)
 
 ### File List
 

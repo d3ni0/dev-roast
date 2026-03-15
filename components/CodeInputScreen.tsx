@@ -16,7 +16,7 @@ export function CodeInputScreen() {
     >
       <h1
         className="font-mono text-2xl font-semibold"
-        style={{ fontFamily: "var(--font-jetbrains-mono)" }}
+        style={{ fontFamily: "'JetBrains Mono', monospace" }}
       >
         $ paste your code. get roasted.
       </h1>

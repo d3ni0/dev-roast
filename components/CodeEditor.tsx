@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Editor from "@monaco-editor/react";
 
 export const PLACEHOLDER_CODE = `function calculateTotal(items) {
@@ -21,6 +22,24 @@ export function CodeEditor({
   onChange,
   height = "360px",
 }: CodeEditorProps) {
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    const dark = html.classList.contains("dark") || html.getAttribute("data-theme") === "dark";
+    setIsDark(dark);
+
+    const handleThemeChange = () => {
+      const newDark = html.classList.contains("dark") || html.getAttribute("data-theme") === "dark";
+      setIsDark(newDark);
+    };
+
+    const observer = new MutationObserver(handleThemeChange);
+    observer.observe(html, { attributes: true, attributeFilter: ["class", "data-theme"] });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       className="overflow-hidden rounded-xl border border-border-primary"
@@ -36,12 +55,12 @@ export function CodeEditor({
         defaultLanguage="javascript"
         value={value}
         onChange={(v) => onChange?.(v ?? "")}
-        theme="vs-dark"
+        theme={isDark ? "vs-dark" : "vs"}
         options={{
           lineNumbers: "on",
           minimap: { enabled: false },
           fontSize: 14,
-          fontFamily: "var(--font-jetbrains-mono), 'JetBrains Mono', monospace",
+          fontFamily: "'JetBrains Mono', 'Monaco', monospace",
           padding: { top: 16 },
           scrollBeyondLastLine: false,
           wordWrap: "on",
