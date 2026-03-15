@@ -1,6 +1,6 @@
 # Story 1.1: Project Scaffold & Design System
 
-Status: review
+Status: done
 
 <!-- Note: Validation is optional. Run validate-create-story for quality check before dev-story. -->
 
@@ -101,6 +101,8 @@ Claude Opus 4.5
 - ThemeProvider + ThemeToggle with .dark class and data-theme on html
 - Geist Sans (UI) and JetBrains Mono (code) via next/font/google
 - app/page.tsx placeholder with devroast hero text
+- tailwind.config.ts created for content scanning
+- README.md customized with devroast context and quick start
 
 ### File List
 
@@ -114,9 +116,10 @@ Claude Opus 4.5
 - types/ (empty dir)
 - package.json
 - next.config.ts
+- tailwind.config.ts
 - tsconfig.json
 - postcss.config.mjs
 - eslint.config.mjs
-- next-env.d.ts
 - .env.example
 - .gitignore
+- README.md

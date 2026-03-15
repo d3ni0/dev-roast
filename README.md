@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# devroast
 
-## Getting Started
+**Paste your code. Get roasted.**
 
-First, run the development server:
+A web app where developers paste code and receive immediate feedback: a score (0–10), roast (honest or sarcastic), structured analysis, and suggested fixes.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router, TypeScript)
+- **Styling:** Tailwind CSS v4
+- **Fonts:** Geist Sans (UI), JetBrains Mono (code)
+- **Linting:** ESLint
+
+## Quick Start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` — Start development server
+- `npm run build` — Production build
+- `npm start` — Run production server
+- `npm run lint` — Lint code
 
-## Learn More
+## Design Tokens
 
-To learn more about Next.js, take a look at the following resources:
+All tokens are CSS variables in `app/globals.css` with dark/light theme support:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Colors:** `bg-page`, `bg-surface`, `bg-input`, `border-primary`, `text-primary/secondary/tertiary`, `accent-green/amber/red/cta`
+- **Fonts:** `--font-geist-sans` (UI), `--font-jetbrains-mono` (code)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Theme toggle: Click "Theme" button (top right).
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+dev-roast/
+├── app/             # Next.js app router
+├── components/      # React components
+│  └── ui/           # UI component library
+├── lib/             # Utilities
+├── types/           # TypeScript types
+├── public/          # Static assets
+└── _bmad-output/    # BMAD artifacts (planning, implementation)
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Ready for Vercel. Set environment variables for LLM API (Story 2.1):
+- `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
