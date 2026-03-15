@@ -1,0 +1,49 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "9qwc9",
+      "name": "Screen 1 - Code Input",
+      "children": []
+    },
+    {
+      "type": "frame",
+      "id": "8pCh0",
+      "name": "Screen 2 - Roast Results",
+      "children": []
+    },
+    {
+      "type": "frame",
+      "id": "5iseT",
+      "name": "Screen 3 - Shame Leaderboard",
+      "children": []
+    },
+    {
+      "type": "frame",
+      "id": "4J5QT",
+      "name": "Screen 4 - OG Image",
+      "children": []
+    },
+    {
+      "type": "frame",
+      "id": "Wbm4d",
+      "name": "Component Library",
+      "children": []
+    }
+  ],
+  "variables": {
+    "accent-green": { "value": "#10B981" },
+    "accent-red": { "value": "#EF4444" },
+    "accent-amber": { "value": "#F59E0B" },
+    "bg-page": { "value": "#0A0A0A" },
+    "bg-input": { "value": "#111111" },
+    "bg-surface": { "value": "#0F0F0F" },
+    "border-primary": { "value": "#2A2A2A" },
+    "text-primary": { "value": "#FAFAFA" },
+    "text-secondary": { "value": "#6B7280" },
+    "text-tertiary": { "value": "#4B5563" },
+    "font-primary": { "value": "JetBrains Mono" },
+    "font-secondary": { "value": "IBM Plex Mono" }
+  }
+}
