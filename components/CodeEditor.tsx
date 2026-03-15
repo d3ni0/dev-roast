@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Editor from "@monaco-editor/react";
+import type { LanguageId } from "@/types/languages";
 
 export const PLACEHOLDER_CODE = `function calculateTotal(items) {
   let total = 0;
@@ -14,17 +15,21 @@ export const PLACEHOLDER_CODE = `function calculateTotal(items) {
 export interface CodeEditorProps {
   value?: string;
   onChange?: (value: string) => void;
+  language?: LanguageId;
   height?: string;
 }
 
 export function CodeEditor({
   value = PLACEHOLDER_CODE,
   onChange,
+  language = "javascript",
   height = "360px",
 }: CodeEditorProps) {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const html = document.documentElement;
     const dark = html.classList.contains("dark") || html.getAttribute("data-theme") === "dark";
     setIsDark(dark);
@@ -40,6 +45,8 @@ export function CodeEditor({
     return () => observer.disconnect();
   }, []);
 
+  if (!mounted) return null;
+
   return (
     <div
       className="overflow-hidden rounded-xl border border-border-primary"
@@ -52,7 +59,7 @@ export function CodeEditor({
     >
       <Editor
         height={height}
-        defaultLanguage="javascript"
+        language={language}
         value={value}
         onChange={(v) => onChange?.(v ?? "")}
         theme={isDark ? "vs-dark" : "vs"}

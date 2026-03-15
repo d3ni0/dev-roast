@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import { CodeEditor, PLACEHOLDER_CODE } from "./CodeEditor";
+import { LanguageSelector } from "./LanguageSelector";
+import type { LanguageId } from "@/types/languages";
 
 export function CodeInputScreen() {
   const [code, setCode] = useState<string>(PLACEHOLDER_CODE);
+  const [language, setLanguage] = useState<LanguageId>("javascript");
 
   return (
     <main
@@ -26,8 +29,9 @@ export function CodeInputScreen() {
       >
         // drop your code below and we&apos;ll rate it — brutally honest or full roast mode
       </p>
-      <div className="mt-8">
-        <CodeEditor value={code} onChange={setCode} height="360px" />
+      <div className="mt-8 flex flex-col gap-4">
+        <LanguageSelector value={language} onChange={setLanguage} />
+        <CodeEditor value={code} onChange={setCode} language={language} height="360px" />
       </div>
     </main>
   );
