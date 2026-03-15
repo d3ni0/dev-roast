@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Design tokens - devroast (docs/devroast-design-summary.md) */
+:root,
+[data-theme="light"] {
+  --bg-page: #FAFAFA;
+  --bg-surface: #FFFFFF;
+  --bg-input: #F4F4F5;
+  --border-primary: #E4E4E7;
+  --text-primary: #18181B;
+  --text-secondary: #52525B;
+  --text-tertiary: #71717A;
+  --accent-green: #16A34A;
+  --accent-amber: #CA8A04;
+  --accent-red: #DC2626;
+  --accent-cta: #7C3AED;
+}
+
+.dark,
+[data-theme="dark"] {
+  --bg-page: #0C0C0E;
+  --bg-surface: #18181B;
+  --bg-input: #141416;
+  --border-primary: #27272A;
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-tertiary: #71717A;
+  --accent-green: #22C55E;
+  --accent-amber: #EAB308;
+  --accent-red: #EF4444;
+  --accent-cta: #8B5CF6;
+}
+
+@theme inline {
+  --color-bg-page: var(--bg-page);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-input: var(--bg-input);
+  --color-border-primary: var(--border-primary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent-green: var(--accent-green);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-red: var(--accent-red);
+  --color-accent-cta: var(--accent-cta);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
