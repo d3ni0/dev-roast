@@ -1,6 +1,6 @@
 # Story 1.3: Language Selection
 
-Status: review
+Status: done
 
 ## Story
 
@@ -28,6 +28,10 @@ So that the roast analysis is accurate.
   - [x] 3.1 Add LanguageSelector UI (above editor)
   - [x] 3.2 Use design tokens: bg-surface, border-primary, text-primary for dropdown
   - [x] 3.3 Store `code` and `language` in state for Story 2.2 roast request
+
+### Review Follow-ups (AI)
+
+- [ ] [AI-Review][Low] Verify Elixir language support in Monaco; remove or add fallback if unsupported [types/languages.ts:16]
 
 ## Dev Notes
 
