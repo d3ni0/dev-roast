@@ -44,8 +44,8 @@ development_status:
   1-4-code-validation-error-display: done
   epic-1-retrospective: optional
 
-  epic-2: backlog
-  2-1-roast-api-llm-integration: backlog
+  epic-2: in-progress
+  2-1-roast-api-llm-integration: done
   2-2-roast-mode-toggle-submit: backlog
   2-3-loading-state: backlog
   2-4-roast-results-display: backlog

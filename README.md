@@ -51,5 +51,24 @@ dev-roast/
 
 ## Deployment
 
-Ready for Vercel. Set environment variables for LLM API (Story 2.1):
-- `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
+Ready for Vercel.
+
+### Environment Variables
+
+Set up at least one LLM API key:
+
+- **OpenAI:** `OPENAI_API_KEY` (get from https://platform.openai.com/api-keys)
+- **Anthropic:** `ANTHROPIC_API_KEY` (get from https://console.anthropic.com/)
+
+**LLM Provider Selection:**
+The app automatically selects the LLM provider based on which API key is set:
+1. If `OPENAI_API_KEY` is set → uses OpenAI (gpt-4o-mini)
+2. Else if `ANTHROPIC_API_KEY` is set → uses Anthropic (claude-3-5-sonnet)
+3. If neither is set → returns error "LLM not configured"
+
+**Local Development:**
+Copy `.env.example` to `.env.local` and add your API key:
+```bash
+cp .env.example .env.local
+# Edit .env.local and add your key
+```
